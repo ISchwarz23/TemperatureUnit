@@ -19,6 +19,18 @@ public enum TemperatureUnit implements Serializable {
         public double toFahrenheit(double kelvin) {
             return CELSIUS.toFahrenheit(KELVIN.toCelsius(kelvin));
         }
+
+        public double fromCelsius(double celsius) {
+            return CELSIUS.toKelvin(celsius);
+        }
+
+        public double fromKelvin(double kelvin) {
+            return kelvin;
+        }
+
+        public double fromFahrenheit(double fahrenheit) {
+            return FAHRENHEIT.toKelvin(fahrenheit);
+        }
     },
 
     CELSIUS {
@@ -32,6 +44,18 @@ public enum TemperatureUnit implements Serializable {
 
         public double toFahrenheit(double celsius) {
             return celsius * 9 / 5 + 32;
+        }
+
+        public double fromCelsius(double celsius) {
+            return celsius;
+        }
+
+        public double fromKelvin(double kelvin) {
+            return KELVIN.toCelsius(kelvin);
+        }
+
+        public double fromFahrenheit(double fahrenheit) {
+            return FAHRENHEIT.toCelsius(fahrenheit);
         }
     },
 
@@ -47,6 +71,18 @@ public enum TemperatureUnit implements Serializable {
         public double toFahrenheit(double fahrenheit) {
             return fahrenheit;
         }
+
+        public double fromCelsius(double celsius) {
+            return CELSIUS.toFahrenheit(celsius);
+        }
+
+        public double fromKelvin(double kelvin) {
+            return KELVIN.toFahrenheit(kelvin);
+        }
+
+        public double fromFahrenheit(double fahrenheit) {
+            return fahrenheit;
+        }
     };
 
     public double toCelsius(double temperature) {
@@ -58,6 +94,18 @@ public enum TemperatureUnit implements Serializable {
     }
 
     public double toFahrenheit(double temperature) {
+        throw new AbstractMethodError();
+    }
+
+    public double fromCelsius(double celsius) {
+        throw new AbstractMethodError();
+    }
+
+    public double fromKelvin(double kelvin) {
+        throw new AbstractMethodError();
+    }
+
+    public double fromFahrenheit(double fahrenheit) {
         throw new AbstractMethodError();
     }
 

@@ -62,4 +62,49 @@ public class TemperatureUnitTest {
         assertEquals(TEMP_FAHRENHEIT, TemperatureUnit.FAHRENHEIT.toFahrenheit(TEMP_FAHRENHEIT), VALID_DELTA);
     }
 
+    @Test
+    public void testKelvinFromKelvin() {
+        assertEquals(TEMP_KELVIN, TemperatureUnit.KELVIN.fromKelvin(TEMP_KELVIN), VALID_DELTA);
+    }
+
+    @Test
+    public void testKelvinFromCelsius() {
+        assertEquals(TEMP_KELVIN, TemperatureUnit.KELVIN.fromCelsius(TEMP_CELSIUS), VALID_DELTA);
+    }
+
+    @Test
+    public void testKelvinFromFahrenheit() {
+        assertEquals(TEMP_KELVIN, TemperatureUnit.KELVIN.fromFahrenheit(TEMP_FAHRENHEIT), VALID_DELTA);
+    }
+
+    @Test
+    public void testCelsiusFromKelvin() {
+        assertEquals(TEMP_CELSIUS, TemperatureUnit.CELSIUS.fromKelvin(TEMP_KELVIN), VALID_DELTA);
+    }
+
+    @Test
+    public void testCelsiusFromCelsius() {
+        assertEquals(TEMP_CELSIUS, TemperatureUnit.CELSIUS.fromCelsius(TEMP_CELSIUS), VALID_DELTA);
+    }
+
+    @Test
+    public void testCelsiusFromFahrenheit() {
+        assertEquals(TEMP_CELSIUS, TemperatureUnit.CELSIUS.fromFahrenheit(TEMP_FAHRENHEIT), VALID_DELTA);
+    }
+
+    @Test
+    public void testFahrenheitFromKelvin() {
+        assertEquals(TEMP_FAHRENHEIT, TemperatureUnit.FAHRENHEIT.fromKelvin(TEMP_KELVIN), VALID_DELTA);
+    }
+
+    @Test
+    public void testFahrenheitFromCelsius() {
+        assertEquals(TEMP_FAHRENHEIT, TemperatureUnit.FAHRENHEIT.fromCelsius(TEMP_CELSIUS), VALID_DELTA);
+    }
+
+    @Test
+    public void testFahrenheitFromFahrenheit() {
+        assertEquals(TEMP_FAHRENHEIT, TemperatureUnit.FAHRENHEIT.fromFahrenheit(TEMP_FAHRENHEIT), VALID_DELTA);
+    }
+
 }
