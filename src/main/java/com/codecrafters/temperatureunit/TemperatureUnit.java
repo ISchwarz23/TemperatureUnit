@@ -12,20 +12,12 @@ public enum TemperatureUnit implements Serializable {
             return kelvin - 273.15;
         }
 
-        public double toKelvin(double kelvin) {
-            return kelvin;
-        }
-
         public double toFahrenheit(double kelvin) {
             return CELSIUS.toFahrenheit(KELVIN.toCelsius(kelvin));
         }
 
         public double fromCelsius(double celsius) {
             return CELSIUS.toKelvin(celsius);
-        }
-
-        public double fromKelvin(double kelvin) {
-            return kelvin;
         }
 
         public double fromFahrenheit(double fahrenheit) {
@@ -38,16 +30,8 @@ public enum TemperatureUnit implements Serializable {
             return celsius + 273.15;
         }
 
-        public double toCelsius(double celsius) {
-            return celsius;
-        }
-
         public double toFahrenheit(double celsius) {
             return celsius * 9 / 5 + 32;
-        }
-
-        public double fromCelsius(double celsius) {
-            return celsius;
         }
 
         public double fromKelvin(double kelvin) {
@@ -68,10 +52,6 @@ public enum TemperatureUnit implements Serializable {
             return (fahrenheit - 32) * 5 / 9;
         }
 
-        public double toFahrenheit(double fahrenheit) {
-            return fahrenheit;
-        }
-
         public double fromCelsius(double celsius) {
             return CELSIUS.toFahrenheit(celsius);
         }
@@ -79,34 +59,30 @@ public enum TemperatureUnit implements Serializable {
         public double fromKelvin(double kelvin) {
             return KELVIN.toFahrenheit(kelvin);
         }
-
-        public double fromFahrenheit(double fahrenheit) {
-            return fahrenheit;
-        }
     };
 
     public double toCelsius(double temperature) {
-        throw new AbstractMethodError();
+        return temperature;
     }
 
     public double toKelvin(double temperature) {
-        throw new AbstractMethodError();
+        return temperature;
     }
 
     public double toFahrenheit(double temperature) {
-        throw new AbstractMethodError();
+        return temperature;
     }
 
     public double fromCelsius(double celsius) {
-        throw new AbstractMethodError();
+        return celsius;
     }
 
     public double fromKelvin(double kelvin) {
-        throw new AbstractMethodError();
+        return kelvin;
     }
 
     public double fromFahrenheit(double fahrenheit) {
-        throw new AbstractMethodError();
+        return fahrenheit;
     }
 
 }
